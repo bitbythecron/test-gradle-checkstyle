@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+}
+
+apply plugin: 'checkstyle'
+
+dependencies {
+    testCompile(
+        'junit:junit:4.12'
+    )
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+checkstyle {
+    config = rootProject.resources.text.fromFile('buildConfig/checkstyle/checkstyle.xml')
+}
